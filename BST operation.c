@@ -123,13 +123,29 @@ void postorder(struct node *T)
         printf("%d \t",T->data);
     }
 }
+int height(struct node* root)
+{
+	int x;
+	int y;
+	if (root)
+	{
+		x=height(root->left);
+		y=height(root->right);
+		if (x>y)
+		return x+1;
+		else
+		return y+1;
+	}
+	return 0;
+	
+}
 int main()
 {
     int n,a,choice,x;
     do
     {
         printf("\nEnter choice : \n");
-        printf("1.Insert\n2.delete node having No Child\n3.Inorder traversal\n4.Preorder traversal\n5.EXIT\n");
+        printf("1.Insert\n2.delete node having No Child\n3.Inorder traversal\n4.Preorder traversal\n5. Potorder\n6. Height7.EXIT\n");
         scanf("%d",&choice);
         switch(choice)
         {
@@ -161,6 +177,10 @@ int main()
                postorder(root);
                break;
             case 6:
+                printf("height is\n");
+                cout<<height(root);
+                break;
+            case 7:
                 return(1);
                 break;
         }
