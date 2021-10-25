@@ -97,13 +97,30 @@ void inorder(struct node *T)
         inorder(T->right);
     }
 }
+void preorder(struct node *T)
+
+{
+
+    if(T!=NULL)
+
+    {
+
+        printf("%d \t",T->data);
+
+        preorder(T->left);
+
+        preorder(T->right);
+
+    }
+
+}
 int main()
 {
     int n,a,choice,x;
     do
     {
         printf("\nEnter choice : \n");
-        printf("1.Insert\n2.delete node having No Child\n3.Inorder traversal\n4.EXIT\n");
+        printf("1.Insert\n2.delete node having No Child\n3.Inorder traversal\n4.Preorder traversal\n5.EXIT\n");
         scanf("%d",&choice);
         switch(choice)
         {
@@ -123,7 +140,14 @@ int main()
                 printf("Inorder BST is \n");
                 inorder(root);
                 break;
-            case 4:
+             case 4:
+
+                printf("preorder BST is \n");
+
+                preorder(root);
+
+                break;
+            case 5:
                 return(1);
                 break;
         }
