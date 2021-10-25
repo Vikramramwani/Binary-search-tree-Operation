@@ -114,6 +114,15 @@ void preorder(struct node *T)
     }
 
 }
+void postorder(struct node *T)
+{
+    if(T!=NULL)
+    {
+        postorder(T->left);
+        postorder(T->right);
+        printf("%d \t",T->data);
+    }
+}
 int main()
 {
     int n,a,choice,x;
@@ -145,9 +154,13 @@ int main()
                 printf("preorder BST is \n");
 
                 preorder(root);
-
+             
                 break;
             case 5:
+               printf("postorder BST is \n");
+               postorder(root);
+               break;
+            case 6:
                 return(1);
                 break;
         }
