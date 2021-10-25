@@ -88,22 +88,13 @@ struct node *deleteNode(struct node *root, int key)
     }
     return root;
 }
-void inorder(struct node *T)
-{
-    if(T!=NULL)
-    {
-        inorder(T->left);
-        printf("%d \t",T->data);
-        inorder(T->right);
-    }
-}
 int main()
 {
     int n,a,choice,x;
     do
     {
         printf("\nEnter choice : \n");
-        printf("1.Insert\n2.delete node having No Child\n3.Inorder traversal\n4.EXIT\n");
+        printf("1.Insert\n2.delete node having No Child\n3.EXIT\n");
         scanf("%d",&choice);
         switch(choice)
         {
@@ -120,10 +111,6 @@ int main()
                 printf("Deletion of %d element having no child is done\n",a);
                 break;
             case 3:
-                printf("Inorder BST is \n");
-                inorder(root);
-                break;
-            case 4:
                 return(1);
                 break;
         }
